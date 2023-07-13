@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import Cabecalho from './componentes/Cabecalho';
+import 'index.css';
+import App from 'App';
+import Cabecalho from 'Components/Cabecalho';
 
 ReactDOM.render(
   <React.StrictMode>

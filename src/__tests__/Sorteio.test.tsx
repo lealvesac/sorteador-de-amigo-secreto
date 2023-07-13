@@ -1,20 +1,19 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import React from "react";
 import { RecoilRoot } from "recoil";
-import { useListaDeParticipantes } from "../state/hook/useListaDeParticipantes";
-import { useResultadoSorteio } from "../state/hook/useResultadoSorteio";
-import Sorteio from "./Sorteio";
+import { useListaDeParticipantes } from "States/hook/useListaDeParticipantes";
+import { useResultadoSorteio } from "States/hook/useResultadoSorteio";
+import Sorteio from "Pages/Sorteio";
 
-jest.mock('../state/hook/useListaDeParticipantes', () => {
-    return {
-        useListaDeParticipantes: jest.fn()
-    }
-})
-jest.mock('../state/hook/useResultadoSorteio', () => {
-    return {
-        useResultadoSorteio: jest.fn()
-    }
-})
+jest.mock("States/hook/useListaDeParticipantes", () => {
+  return {
+    useListaDeParticipantes: jest.fn(),
+  };
+});
+jest.mock("States/hook/useResultadoSorteio", () => {
+  return {
+    useResultadoSorteio: jest.fn(),
+  };
+});
 
 describe('na pagina de sorteio', () => {
     const participantes = [
@@ -38,7 +37,7 @@ describe('na pagina de sorteio', () => {
         </RecoilRoot>)
 
         const opcoes = screen.queryAllByRole('option')
-        expect(opcoes).toHaveLength(participantes.length)
+        expect(opcoes).toHaveLength(participantes.length + 1) //Vem uma opção por padrão.
     })
     test('o amigo secreto é exibido quando solicitado', () => {
         render(<RecoilRoot>

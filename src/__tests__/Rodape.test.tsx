@@ -1,10 +1,9 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import React from "react";
 import { RecoilRoot } from "recoil";
-import { useListaDeParticipantes } from "../state/hook/useListaDeParticipantes";
-import Rodape from "./Rodape";
+import { useListaDeParticipantes } from "States/hook/useListaDeParticipantes";
+import Rodape from "Components/Rodape/Rodape";
 
-jest.mock('../state/hook/useListaDeParticipantes', () => {
+jest.mock('States/hook/useListaDeParticipantes', () => {
     return {
         useListaDeParticipantes: jest.fn()
     }
@@ -13,7 +12,7 @@ jest.mock('../state/hook/useListaDeParticipantes', () => {
 const mockNavegacao = jest.fn()
 const mockSorteio = jest.fn()
 
-jest.mock('../state/hook/useSorteador', () => {
+jest.mock('States/hook/useSorteador', () => {
     return {
         useSorteador: () => mockSorteio
     }

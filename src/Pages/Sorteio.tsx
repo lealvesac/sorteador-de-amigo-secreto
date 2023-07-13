@@ -1,8 +1,8 @@
 // src/paginas/Sorteio.tsx
 import { useState } from "react"
-import Card from "../componentes/Card"
-import { useListaDeParticipantes } from "../state/hook/useListaDeParticipantes"
-import { useResultadoSorteio } from "../state/hook/useResultadoSorteio"
+import Card from "Components/Card"
+import { useListaDeParticipantes } from "States/hook/useListaDeParticipantes"
+import { useResultadoSorteio } from "States/hook/useResultadoSorteio"
 
 import './Sorteio.css'
 
@@ -34,6 +34,7 @@ const Sorteio = () => {
                     value={participanteDaVez}
                     onChange={evento => setParticipanteDaVez(evento.target.value)}
                 >
+                    <option>Selecione quem vai iniciar o sorteio:</option>
                     {participantes.map(participante => <option key={participante}>{participante}</option>)}
                 </select>
                 <p>Clique em em sortear para ver quem é seu amigo secreto!</p>

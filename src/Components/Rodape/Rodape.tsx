@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
-import { useListaDeParticipantes } from "../state/hook/useListaDeParticipantes"
-import { useSorteador } from "../state/hook/useSorteador"
+import { useListaDeParticipantes } from "States/hook/useListaDeParticipantes"
+import { useSorteador } from "States/hook/useSorteador"
 
 import './Rodape.css'
 

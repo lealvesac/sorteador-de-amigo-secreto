@@ -1,10 +1,9 @@
 import { render, screen } from '@testing-library/react'
-import React from 'react'
 import { RecoilRoot } from 'recoil'
-import { useListaDeParticipantes } from '../state/hook/useListaDeParticipantes'
-import ListaParticipantes from './ListaParticipantes'
+import { useListaDeParticipantes } from 'States/hook/useListaDeParticipantes'
+import ListaParticipantes from 'Components/ListaParticipantes/ListaParticipantes'
 
-jest.mock('../state/hook/useListaDeParticipantes', () => {
+jest.mock('States/hook/useListaDeParticipantes', () => {
     return {
         useListaDeParticipantes: jest.fn()
     }
